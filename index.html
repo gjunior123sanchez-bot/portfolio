@@ -1,1 +1,2511 @@
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080d1a">
+<title>Gerardo V. Sanchez Jr. | IT Professional Portfolio</title>
 
+<style>
+/* =====================================================
+   GERARDO V. SANCHEZ JR. - PERSONAL PORTFOLIO
+   EDIT COLORS, CONTENT, AND PERSONAL DETAILS BELOW.
+===================================================== */
+
+:root {
+    --bg: #080d1a;
+    --bg-secondary: #0d1426;
+    --card: rgba(19, 29, 51, 0.72);
+    --card-hover: rgba(29, 44, 75, 0.85);
+    --blue: #3984ff;
+    --indigo: #7657ff;
+    --cyan: #36d5ed;
+    --text: #f3f6ff;
+    --muted: #9aa8c2;
+    --border: rgba(255,255,255,0.09);
+    --gradient: linear-gradient(135deg, #3984ff, #7657ff);
+    --radius: 18px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button, input, textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.container {
+    width: 90%;
+    max-width: 1180px;
+    margin: auto;
+}
+
+section {
+    padding: 100px 0;
+    position: relative;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.section-heading .small-title {
+    color: var(--cyan);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 700;
+}
+
+.section-heading h2 {
+    font-size: clamp(30px, 5vw, 43px);
+    margin-top: 8px;
+    letter-spacing: -1px;
+}
+
+.section-heading h2 span {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.section-heading p {
+    color: var(--muted);
+    max-width: 580px;
+    margin: 12px auto 0;
+}
+
+.gradient-text {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.glass {
+    background: var(--card);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: var(--radius);
+    transition: 0.35s ease;
+}
+
+.glass:hover {
+    background: var(--card-hover);
+    border-color: rgba(57,132,255,0.4);
+    transform: translateY(-6px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
+
+/* BACKGROUND DECORATIONS */
+
+.background-glow {
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    filter: blur(140px);
+    opacity: 0.13;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.glow-one {
+    background: #2875ff;
+    top: -100px;
+    left: -150px;
+}
+
+.glow-two {
+    background: #7546ff;
+    right: -150px;
+    top: 45%;
+}
+
+/* NAVIGATION */
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background: rgba(8,13,26,0.85);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+    min-height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--blue);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--cyan);
+}
+
+.nav-contact {
+    background: var(--gradient);
+    padding: 10px 20px;
+    border-radius: 30px;
+    color: white !important;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 27px;
+}
+
+/* BUTTONS */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 13px 24px;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 700;
+    border: 1px solid transparent;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: var(--gradient);
+    color: white;
+    box-shadow: 0 5px 25px rgba(57,132,255,0.2);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(57,132,255,0.35);
+}
+
+.btn-outline {
+    border-color: rgba(255,255,255,0.2);
+    color: white;
+}
+
+.btn-outline:hover {
+    border-color: var(--blue);
+    background: rgba(57,132,255,0.1);
+    transform: translateY(-3px);
+}
+
+/* HERO */
+
+#home {
+    min-height: 100vh;
+    padding-top: 125px;
+    display: flex;
+    align-items: center;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 65px;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    background: rgba(57,132,255,0.1);
+    border: 1px solid rgba(57,132,255,0.3);
+    color: var(--cyan);
+    padding: 8px 15px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 23px;
+}
+
+.status-dot {
+    height: 8px;
+    width: 8px;
+    background: #35d69a;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #35d69a;
+}
+
+.hero-content h1 {
+    font-size: clamp(42px, 6vw, 67px);
+    line-height: 1.13;
+    letter-spacing: -2px;
+    margin-bottom: 16px;
+}
+
+.hero-content h3 {
+    font-size: clamp(18px, 2.5vw, 23px);
+    font-weight: 500;
+    color: #c5d2ec;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    color: var(--muted);
+    max-width: 570px;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+}
+
+.hero-socials {
+    display: flex;
+    gap: 17px;
+    margin-top: 35px;
+}
+
+.hero-socials a {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    color: var(--muted);
+    transition: 0.3s;
+}
+
+.hero-socials a:hover {
+    color: white;
+    background: var(--gradient);
+    transform: translateY(-4px);
+}
+
+.hero-image-area {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.profile-wrapper {
+    position: relative;
+    width: 330px;
+    height: 390px;
+    display: grid;
+    place-items: center;
+}
+
+.profile-frame {
+    width: 290px;
+    height: 350px;
+    border-radius: 45% 45% 25px 25px;
+    background: linear-gradient(145deg, #174c91, #3e2c91);
+    border: 1px solid rgba(255,255,255,0.18);
+    overflow: hidden;
+    position: relative;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 20px 80px rgba(49,100,255,0.22);
+}
+
+.profile-placeholder {
+    font-size: 90px;
+    font-weight: 800;
+    letter-spacing: -8px;
+    color: rgba(255,255,255,0.9);
+}
+
+/* PROFILE PHOTO:
+   To use your picture, replace the initials with:
+   <img src="YOUR_IMAGE_PATH" alt="Gerardo Sanchez">
+   For a truly single-file website, use an embedded
+   Base64 image instead of an external image path.
+*/
+
+.profile-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.floating-card {
+    position: absolute;
+    padding: 12px 18px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    animation: float 4s ease-in-out infinite;
+}
+
+.float-top {
+    top: 55px;
+    right: -20px;
+}
+
+.float-bottom {
+    bottom: 35px;
+    left: -25px;
+    animation-delay: 1s;
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+/* ABOUT */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    align-items: center;
+}
+
+.about-card {
+    padding: 35px;
+}
+
+.about-card h3 {
+    font-size: 24px;
+    margin-bottom: 18px;
+}
+
+.about-card p {
+    color: var(--muted);
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.about-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 25px;
+}
+
+.info-item {
+    padding: 16px;
+    background: rgba(255,255,255,0.035);
+    border-radius: 10px;
+    border: 1px solid var(--border);
+}
+
+.info-item small {
+    display: block;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.info-item strong {
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+.about-highlight {
+    padding: 35px;
+    background: linear-gradient(145deg, rgba(57,132,255,0.15), rgba(118,87,255,0.12));
+    border: 1px solid rgba(57,132,255,0.2);
+    border-radius: var(--radius);
+}
+
+.about-highlight h3 {
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.highlight-item {
+    display: flex;
+    gap: 14px;
+    margin: 22px 0;
+}
+
+.highlight-icon {
+    min-width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    background: rgba(57,132,255,0.17);
+    color: var(--cyan);
+    border-radius: 10px;
+    font-size: 19px;
+}
+
+.highlight-item h4 {
+    font-size: 14px;
+}
+
+.highlight-item p {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+/* SKILLS */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.skill-card {
+    padding: 25px;
+}
+
+.skill-icon {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    background: rgba(57,132,255,0.13);
+    border-radius: 13px;
+    font-size: 23px;
+    margin-bottom: 18px;
+}
+
+.skill-card h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.skill-card p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.skill-indicator {
+    height: 5px;
+    width: 100%;
+    background: rgba(255,255,255,0.08);
+    border-radius: 10px;
+    margin-top: 18px;
+    overflow: hidden;
+}
+
+.skill-indicator span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient);
+    border-radius: 10px;
+}
+
+/* These indicators are decorative skill-category markers.
+   They do NOT represent verified proficiency percentages. */
+
+/* EXPERIENCE */
+
+.experience-box {
+    max-width: 850px;
+    margin: auto;
+    padding: 45px;
+    text-align: center;
+}
+
+.experience-icon {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.experience-box h3 {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.experience-box p {
+    color: var(--muted);
+    max-width: 620px;
+    margin: auto;
+    font-size: 14px;
+}
+
+.experience-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.experience-tags span,
+.tech-tag {
+    background: rgba(57,132,255,0.12);
+    color: #91bcff;
+    border: 1px solid rgba(57,132,255,0.2);
+    padding: 6px 13px;
+    border-radius: 30px;
+    font-size: 11px;
+}
+
+/* PROJECTS */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.project-card {
+    overflow: hidden;
+}
+
+.project-cover {
+    height: 175px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, #163d76, #493087);
+    font-size: 55px;
+    position: relative;
+}
+
+.project-card:nth-child(2) .project-cover {
+    background: linear-gradient(135deg, #164b62, #283b85);
+}
+
+.project-card:nth-child(3) .project-cover {
+    background: linear-gradient(135deg, #413079, #164d71);
+}
+
+.project-content {
+    padding: 23px;
+}
+
+.project-content h3 {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.project-content p {
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 18px;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-bottom: 20px;
+}
+
+.project-link {
+    color: var(--cyan);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.project-link:hover {
+    color: white;
+}
+
+/* EDUCATION TIMELINE */
+
+.timeline {
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    left: 18px;
+    top: 0;
+    background: linear-gradient(var(--blue), var(--indigo), transparent);
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 55px;
+    margin-bottom: 32px;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 9px;
+    top: 25px;
+    height: 20px;
+    width: 20px;
+    background: var(--blue);
+    border: 4px solid var(--bg);
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(57,132,255,0.6);
+}
+
+.timeline-content {
+    padding: 25px;
+}
+
+.timeline-date {
+    color: var(--cyan);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.timeline-content h3 {
+    margin: 8px 0;
+    font-size: 18px;
+}
+
+.timeline-content p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* CERTIFICATIONS */
+
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.cert-card {
+    padding: 25px;
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.cert-icon {
+    font-size: 28px;
+}
+
+.cert-card h3 {
+    font-size: 14px;
+    margin-bottom: 7px;
+}
+
+.cert-card p {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+/* AWARDS */
+
+.award-box {
+    max-width: 850px;
+    margin: 45px auto 0;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    border-color: rgba(255,190,80,0.3);
+    background: linear-gradient(120deg, rgba(255,184,65,0.09), rgba(118,87,255,0.08));
+}
+
+.award-icon {
+    font-size: 45px;
+}
+
+.award-box h3 {
+    font-size: 17px;
+}
+
+.award-box p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* SERVICES */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.service-card {
+    padding: 30px;
+}
+
+.service-icon {
+    font-size: 35px;
+    margin-bottom: 17px;
+}
+
+.service-card h3 {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+/* CONTACT */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 30px;
+}
+
+.contact-info {
+    padding: 30px;
+}
+
+.contact-info h3 {
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.contact-info > p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 28px;
+}
+
+.contact-detail {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 23px 0;
+}
+
+.contact-icon {
+    width: 43px;
+    height: 43px;
+    display: grid;
+    place-items: center;
+    background: rgba(57,132,255,0.13);
+    color: var(--cyan);
+    border-radius: 10px;
+}
+
+.contact-detail small {
+    display: block;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.contact-detail strong {
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+.contact-form {
+    padding: 30px;
+}
+
+.contact-form h3 {
+    font-size: 21px;
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.form-group {
+    margin-bottom: 17px;
+}
+
+.form-group label {
+    display: block;
+    color: #c7d4eb;
+    font-size: 12px;
+    margin-bottom: 7px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 13px 15px;
+    color: white;
+    background: rgba(255,255,255,0.045);
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    outline: none;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(57,132,255,0.1);
+}
+
+.form-group textarea {
+    height: 130px;
+    resize: vertical;
+}
+
+.contact-form button {
+    width: 100%;
+    border: none;
+}
+
+.form-note {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 12px;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 35px 0;
+    border-top: 1px solid var(--border);
+    background: rgba(5,9,18,0.7);
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-content p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 18px;
+}
+
+.footer-socials a {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.footer-socials a:hover {
+    color: var(--cyan);
+}
+
+/* BACK TO TOP */
+
+.back-top {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    height: 45px;
+    width: 45px;
+    display: grid;
+    place-items: center;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    background: var(--gradient);
+    font-size: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 500;
+}
+
+.back-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ANIMATIONS */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* RESPONSIVE DESIGN */
+
+@media(max-width: 1000px) {
+    .nav-links {
+        gap: 17px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    .hero-grid {
+        gap: 25px;
+    }
+
+    .skills-grid,
+    .cert-grid,
+    .services-grid,
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 768px) {
+    section {
+        padding: 75px 0;
+    }
+
+    .navbar {
+        min-height: 68px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 68px;
+        left: 0;
+        width: 100%;
+        background: #0c1426;
+        border-bottom: 1px solid var(--border);
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 20px 6%;
+        gap: 0;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links li {
+        padding: 12px 0;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    .nav-contact {
+        display: inline-block;
+        width: fit-content;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons,
+    .hero-socials {
+        justify-content: center;
+    }
+
+    .hero-image-area {
+        margin-top: 20px;
+    }
+
+    .profile-wrapper {
+        transform: scale(0.9);
+    }
+
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-info {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media(max-width: 500px) {
+    .container {
+        width: 90%;
+    }
+
+    .hero-content h1 {
+        font-size: 43px;
+    }
+
+    .skills-grid,
+    .cert-grid,
+    .services-grid,
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .profile-wrapper {
+        transform: scale(0.8);
+        margin: -20px 0;
+    }
+
+    .about-info {
+        grid-template-columns: 1fr;
+    }
+
+    .award-box {
+        align-items: flex-start;
+        padding: 22px;
+    }
+
+    .footer-content {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .experience-box {
+        padding: 28px 20px;
+    }
+
+    .about-card,
+    .about-highlight {
+        padding: 25px;
+    }
+}
+
+@media(prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="background-glow glow-one"></div>
+<div class="background-glow glow-two"></div>
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<header>
+    <div class="container navbar">
+
+        <a href="#home" class="logo">
+            GVS<span>.</span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle"
+                aria-label="Open navigation menu"
+                aria-expanded="false">
+            ☰
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#certifications">Certificates</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact" class="nav-contact">Contact Me</a></li>
+        </ul>
+
+    </div>
+</header>
+
+<!-- =====================================================
+     HOME / HERO SECTION
+===================================================== -->
+
+<section id="home">
+
+    <div class="container hero-grid">
+
+        <div class="hero-content reveal">
+
+            <div class="hero-badge">
+                <span class="status-dot"></span>
+                ASPIRING IT PROFESSIONAL
+            </div>
+
+            <h1>
+                Hello, I'm<br>
+                <span class="gradient-text">Gerardo V.</span><br>
+                Sanchez Jr.
+            </h1>
+
+            <h3>
+                Aspiring IT Professional |
+                Technology Enthusiast
+            </h3>
+
+            <p>
+                Passionate about technology, digital innovation,
+                and creative solutions. I enjoy exploring new
+                technologies, developing useful projects, and
+                continuously improving my technical skills.
+            </p>
+
+            <div class="hero-buttons">
+
+                <button class="btn btn-primary" onclick="downloadCV()">
+                    ↓ Download CV
+                </button>
+
+                <a href="#contact" class="btn btn-outline">
+                    ✉ Contact Me
+                </a>
+
+            </div>
+
+            <div class="hero-socials">
+
+                <!-- Replace # with your actual profile links -->
+
+                <a href="#" target="_blank"
+                   rel="noopener noreferrer" aria-label="LinkedIn">
+                    in
+                </a>
+
+                <a href="#" target="_blank"
+                   rel="noopener noreferrer" aria-label="GitHub">
+                    ◈
+                </a>
+
+                <a href="mailto:gjunior123sanchez@gmail.com"
+                   aria-label="Email">
+                    ✉
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-image-area reveal">
+
+            <div class="profile-wrapper">
+
+                <div class="profile-frame">
+
+                    <!-- REPLACE THIS PLACEHOLDER WITH YOUR PHOTO -->
+
+                    <div class="profile-placeholder">
+                        GVS
+                    </div>
+
+                    <!--
+                    To add your photo, replace the div above with:
+
+                    <img src="YOUR_PHOTO_BASE64"
+                         alt="Gerardo V. Sanchez Jr.">
+
+                    -->
+
+                </div>
+
+                <div class="floating-card glass float-top">
+                    💻 Technology Enthusiast
+                </div>
+
+                <div class="floating-card glass float-bottom">
+                    🚀 Always Learning
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     ABOUT ME
+===================================================== -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+            <div class="small-title">Get To Know Me</div>
+            <h2>About <span>Me</span></h2>
+            <p>
+                Discover my background, interests, and professional goals.
+            </p>
+        </div>
+
+        <div class="about-grid">
+
+            <div class="about-card glass reveal">
+
+                <h3>
+                    Who Am I?
+                </h3>
+
+                <p>
+                    I am Gerardo V. Sanchez Jr., a technology
+                    enthusiast with a combination of technical
+                    and creative skills.
+                </p>
+
+                <p>
+                    I have effective time management,
+                    multitasking, communication, and
+                    critical-thinking abilities. I am passionate
+                    about learning new technologies, developing
+                    innovative solutions, and continuously
+                    improving my skills.
+                </p>
+
+                <p>
+                    My interests include information technology,
+                    computer systems, digital content creation,
+                    and technology-related projects in the
+                    technology and music industries.
+                </p>
+
+                <div class="about-info">
+
+                    <div class="info-item">
+                        <small>Full Name</small>
+                        <strong>Gerardo V. Sanchez Jr.</strong>
+                    </div>
+
+                    <div class="info-item">
+                        <small>Location</small>
+                        <strong>Masbate City, Philippines</strong>
+                    </div>
+
+                    <div class="info-item">
+                        <small>Email</small>
+                        <strong>gjunior123sanchez@gmail.com</strong>
+                    </div>
+
+                    <div class="info-item">
+                        <small>Languages</small>
+                        <strong>Minasbate & Tagalog</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="about-highlight reveal">
+
+                <h3>My Professional Goals</h3>
+
+                <div class="highlight-item">
+
+                    <div class="highlight-icon">💻</div>
+
+                    <div>
+                        <h4>Technology Development</h4>
+                        <p>
+                            Explore modern technologies and
+                            improve my technical capabilities.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="highlight-item">
+
+                    <div class="highlight-icon">🚀</div>
+
+                    <div>
+                        <h4>Continuous Learning</h4>
+                        <p>
+                            Develop new skills and stay updated
+                            with technological advancements.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="highlight-item">
+
+                    <div class="highlight-icon">🎯</div>
+
+                    <div>
+                        <h4>Professional Growth</h4>
+                        <p>
+                            Gain practical experience and
+                            contribute to meaningful projects.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="highlight-item">
+
+                    <div class="highlight-icon">💡</div>
+
+                    <div>
+                        <h4>Creative Innovation</h4>
+                        <p>
+                            Combine technical and creative
+                            abilities to develop useful solutions.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     SKILLS
+===================================================== -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+            <div class="small-title">What I Can Do</div>
+            <h2>My <span>Skills</span></h2>
+            <p>
+                Technical knowledge and professional abilities
+                that support my growth in the IT industry.
+            </p>
+        </div>
+
+        <div class="skills-grid">
+
+            <div class="skill-card glass reveal">
+                <div class="skill-icon">💻</div>
+                <h3>Technical Skills</h3>
+                <p>
+                    Foundational technical knowledge and
+                    technology-related problem solving.
+                </p>
+                <div class="skill-indicator"><span></span></div>
+            </div>
+
+            <div class="skill-card glass reveal">
+                <div class="skill-icon">🖥️</div>
+                <h3>Computer & Mobile Devices</h3>
+                <p>
+                    Understanding and working with computers
+                    and mobile devices.
+                </p>
+                <div class="skill-indicator"><span></span></div>
+            </div>
+
+            <div class="skill-card glass reveal">
+                <div class="skill-icon">🧠</div>
+                <h3>Critical Thinking</h3>
+                <p>
+                    Analyzing situations and identifying
+                    possible solutions to problems.
+                </p>
+                <div class="skill-indicator"><span></span></div>
+            </div>
+
+            <div class="skill-card glass reveal">
+                <div class="skill-icon">🤝</div>
+                <h3>Communication Skills</h3>
+                <p>
+                    Sharing information and collaborating
+                    effectively with others.
+                </p>
+                <div class="skill-indicator"><span></span></div>
+            </div>
+
+            <div class="skill-card glass reveal">
+                <div class="skill-icon">⏱️</div>
+                <h3>Time Management</h3>
+                <p>
+                    Organizing tasks and managing time
+                    efficiently.
+                </p>
+                <div class="skill-indicator"><span></span></div>
+            </div>
+
+            <div class="skill-card glass reveal">
+                <div class="skill-icon">📋</div>
+                <h3>Multitasking</h3>
+                <p>
+                    Managing different responsibilities
+                    and tasks effectively.
+                </p>
+                <div class="skill-indicator"><span></span></div>
+            </div>
+
+            <div class="skill-card glass reveal">
+                <div class="skill-icon">🎨</div>
+                <h3>Digital Content Creation</h3>
+                <p>
+                    Creating and organizing digital
+                    content and materials.
+                </p>
+                <div class="skill-indicator"><span></span></div>
+            </div>
+
+            <div class="skill-card glass reveal">
+                <div class="skill-icon">🌐</div>
+                <h3>Online Collaboration</h3>
+                <p>
+                    Using online communication and
+                    collaboration tools.
+                </p>
+                <div class="skill-indicator"><span></span></div>
+            </div>
+
+            <div class="skill-card glass reveal">
+                <div class="skill-icon">🚗</div>
+                <h3>Driving NC II</h3>
+                <p>
+                    National Certificate II qualification
+                    in Driving.
+                </p>
+                <div class="skill-indicator"><span></span></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     EXPERIENCE
+===================================================== -->
+
+<section id="experience">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+            <div class="small-title">My Journey</div>
+            <h2>Professional <span>Experience</span></h2>
+            <p>
+                Building my foundation for a future career in technology.
+            </p>
+        </div>
+
+        <div class="experience-box glass reveal">
+
+            <div class="experience-icon">🚀</div>
+
+            <h3>
+                Aspiring IT Professional
+            </h3>
+
+            <p>
+                I am currently developing my professional
+                capabilities through academic learning,
+                technology-related projects, and continuous
+                skills development.
+                <br><br>
+                Although I have not listed formal employment
+                experience, I am eager to gain practical
+                experience, collaborate with professionals,
+                and contribute to innovative projects.
+            </p>
+
+            <div class="experience-tags">
+                <span>Continuous Learning</span>
+                <span>Academic Projects</span>
+                <span>Technical Skills</span>
+                <span>Professional Development</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     PROJECTS
+     EDIT THE SAMPLE PROJECTS WITH YOUR ACTUAL PROJECTS.
+===================================================== -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+            <div class="small-title">My Work</div>
+            <h2>Featured <span>Projects</span></h2>
+            <p>
+                Academic and technology-related projects
+                showcasing my interests and creativity.
+            </p>
+        </div>
+
+        <div class="projects-grid">
+
+            <!-- PROJECT 1: EDIT THIS CARD -->
+
+            <div class="project-card glass reveal">
+
+                <div class="project-cover">
+                    🗺️
+                </div>
+
+                <div class="project-content">
+
+                    <h3>Digital Tax Map Viewer</h3>
+
+                    <p>
+                        Academic project concept for a digital
+                        mapping platform that allows users to
+                        view property locations and access
+                        property-related information.
+                    </p>
+
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">GIS</span>
+                    </div>
+
+                    <a href="#" class="project-link"
+                       onclick="return projectLink(event, this)">
+                        View Project →
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- PROJECT 2: EDIT THIS CARD -->
+
+            <div class="project-card glass reveal">
+
+                <div class="project-cover">
+                    📚
+                </div>
+
+                <div class="project-content">
+
+                    <h3>Student Scheduling System</h3>
+
+                    <p>
+                        Academic system concept designed to
+                        organize student schedules and provide
+                        convenient access to academic information.
+                    </p>
+
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Database</span>
+                    </div>
+
+                    <a href="#" class="project-link"
+                       onclick="return projectLink(event, this)">
+                        View Project →
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- PROJECT 3: EDIT THIS CARD -->
+
+            <div class="project-card glass reveal">
+
+                <div class="project-cover">
+                    🖥️
+                </div>
+
+                <div class="project-content">
+
+                    <h3>Personal Portfolio Website</h3>
+
+                    <p>
+                        A personal website designed to present
+                        professional information, technical
+                        skills, academic achievements, and
+                        projects in a modern format.
+                    </p>
+
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+
+                    <a href="#" class="project-link"
+                       onclick="return projectLink(event, this)">
+                        View Project →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <p style="text-align:center;color:var(--muted);
+                  font-size:12px;margin-top:25px;">
+            Note: Project descriptions are editable sample entries.
+            Replace them with your actual completed projects.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     EDUCATION
+===================================================== -->
+
+<section id="education">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+            <div class="small-title">Academic Background</div>
+            <h2>My <span>Education</span></h2>
+            <p>
+                My educational journey and academic foundation.
+            </p>
+        </div>
+
+        <div class="timeline">
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content glass">
+
+                    <span class="timeline-date">
+                        2022 – 2026
+                    </span>
+
+                    <h3>Osmeña Colleges</h3>
+
+                    <p>
+                        Quezon Street, Masbate City
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content glass">
+
+                    <span class="timeline-date">
+                        2016 – 2022
+                    </span>
+
+                    <h3>
+                        Masbate National Comprehensive
+                        High School
+                    </h3>
+
+                    <p>
+                        Quezon Street, Masbate City
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content glass">
+
+                    <span class="timeline-date">
+                        2010 – 2016
+                    </span>
+
+                    <h3>Nursery Elementary School</h3>
+
+                    <p>
+                        Nursery Street, Masbate City
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     CERTIFICATIONS
+===================================================== -->
+
+<section id="certifications">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+            <div class="small-title">Qualifications</div>
+            <h2>My <span>Certifications</span></h2>
+            <p>
+                Training and certifications supporting
+                my technical and professional development.
+            </p>
+        </div>
+
+        <div class="cert-grid">
+
+            <div class="cert-card glass reveal">
+
+                <div class="cert-icon">🌐</div>
+
+                <div>
+                    <h3>Using Computer and Mobile Devices</h3>
+                    <p>CISCO Networking Academy</p>
+                </div>
+
+            </div>
+
+            <div class="cert-card glass reveal">
+
+                <div class="cert-icon">🔐</div>
+
+                <div>
+                    <h3>Digital Awareness</h3>
+                    <p>CISCO Networking Academy</p>
+                </div>
+
+            </div>
+
+            <div class="cert-card glass reveal">
+
+                <div class="cert-icon">🎨</div>
+
+                <div>
+                    <h3>Create Digital Content</h3>
+                    <p>CISCO Networking Academy</p>
+                </div>
+
+            </div>
+
+            <div class="cert-card glass reveal">
+
+                <div class="cert-icon">🤝</div>
+
+                <div>
+                    <h3>Communicate and Collaborate Online</h3>
+                    <p>CISCO Networking Academy</p>
+                </div>
+
+            </div>
+
+            <div class="cert-card glass reveal">
+
+                <div class="cert-icon">🚗</div>
+
+                <div>
+                    <h3>Driving NC II</h3>
+                    <p>National Certificate II</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- AWARDS -->
+
+        <div class="award-box glass reveal">
+
+            <div class="award-icon">🏆</div>
+
+            <div>
+                <h3>Special Citation for Thesis Awardee</h3>
+                <p>
+                    Academic Achievement • 2026
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     SERVICES
+===================================================== -->
+
+<section id="services">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+            <div class="small-title">What I Offer</div>
+            <h2>My <span>Services</span></h2>
+            <p>
+                Technology and digital services I can offer
+                based on my current skills and capabilities.
+            </p>
+        </div>
+
+        <div class="services-grid">
+
+            <div class="service-card glass reveal">
+
+                <div class="service-icon">🛠️</div>
+
+                <h3>Basic Technical Support</h3>
+
+                <p>
+                    Assistance with common technology-related
+                    issues and basic computer operations.
+                </p>
+
+            </div>
+
+            <div class="service-card glass reveal">
+
+                <div class="service-icon">💻</div>
+
+                <h3>Computer Troubleshooting</h3>
+
+                <p>
+                    Basic computer troubleshooting and
+                    identification of common system issues.
+                </p>
+
+            </div>
+
+            <div class="service-card glass reveal">
+
+                <div class="service-icon">🎬</div>
+
+                <h3>Digital Content Creation</h3>
+
+                <p>
+                    Creation and organization of digital
+                    materials and creative content.
+                </p>
+
+            </div>
+
+            <div class="service-card glass reveal">
+
+                <div class="service-icon">🌐</div>
+
+                <h3>Basic Website Development</h3>
+
+                <p>
+                    Development of simple, responsive
+                    websites using HTML, CSS, and JavaScript.
+                </p>
+
+            </div>
+
+            <div class="service-card glass reveal">
+
+                <div class="service-icon">💡</div>
+
+                <h3>Technology Solutions</h3>
+
+                <p>
+                    Exploring practical technology-related
+                    solutions for everyday needs.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+            <div class="small-title">Let's Connect</div>
+            <h2>Get In <span>Touch</span></h2>
+            <p>
+                Have a project, opportunity, or collaboration
+                in mind? Feel free to contact me.
+            </p>
+        </div>
+
+        <div class="contact-grid">
+
+            <div class="contact-info glass reveal">
+
+                <h3>Contact Information</h3>
+
+                <p>
+                    I am open to professional opportunities,
+                    collaborations, and technology-related
+                    projects.
+                </p>
+
+                <div class="contact-detail">
+
+                    <div class="contact-icon">✉</div>
+
+                    <div>
+                        <small>Email Address</small>
+                        <strong>
+                            <a href="mailto:gjunior123sanchez@gmail.com">
+                                gjunior123sanchez@gmail.com
+                            </a>
+                        </strong>
+                    </div>
+
+                </div>
+
+                <div class="contact-detail">
+
+                    <div class="contact-icon">📍</div>
+
+                    <div>
+                        <small>Location</small>
+                        <strong>
+                            Barangay Nursery, Masbate City,
+                            Philippines
+                        </strong>
+                    </div>
+
+                </div>
+
+                <div class="contact-detail">
+
+                    <div class="contact-icon">🌐</div>
+
+                    <div>
+                        <small>LinkedIn</small>
+                        <strong>
+                            <a href="#" target="_blank"
+                               rel="noopener noreferrer">
+                                LinkedIn Profile
+                            </a>
+                        </strong>
+                    </div>
+
+                </div>
+
+                <div class="contact-detail">
+
+                    <div class="contact-icon">💻</div>
+
+                    <div>
+                        <small>GitHub</small>
+                        <strong>
+                            <a href="#" target="_blank"
+                               rel="noopener noreferrer">
+                                GitHub Profile
+                            </a>
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- CONTACT FORM
+                 Uses mailto to open the visitor's email app.
+                 No backend or database is required.
+            -->
+
+            <form class="contact-form glass reveal"
+                  id="contactForm">
+
+                <h3>Send Me a Message</h3>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="visitorName">Your Name</label>
+                        <input type="text" id="visitorName"
+                               placeholder="Enter your name"
+                               required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="visitorEmail">Your Email</label>
+                        <input type="email" id="visitorEmail"
+                               placeholder="Enter your email"
+                               required>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="visitorSubject">Subject</label>
+
+                    <input type="text" id="visitorSubject"
+                           placeholder="Enter message subject"
+                           required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="visitorMessage">Message</label>
+
+                    <textarea id="visitorMessage"
+                              placeholder="Write your message here..."
+                              required></textarea>
+
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    Send Message →
+                </button>
+
+                <p class="form-note">
+                    Your default email application will open
+                    with your message ready to send.
+                </p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="container footer-content">
+
+        <div>
+            <a href="#home" class="logo">
+                GVS<span>.</span>
+            </a>
+
+            <p>
+                © <span id="currentYear"></span>
+                Gerardo V. Sanchez Jr. All rights reserved.
+            </p>
+        </div>
+
+        <div class="footer-socials">
+
+            <a href="#home">Home</a>
+
+            <a href="#about">About</a>
+
+            <a href="#projects">Projects</a>
+
+            <a href="#contact">Contact</a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<button class="back-top" id="backTop"
+        aria-label="Back to top">
+    ↑
+</button>
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+/* =====================================================
+   PERSONAL CONFIGURATION
+   EDIT THESE VALUES WHEN CUSTOMIZING YOUR WEBSITE.
+===================================================== */
+
+// Your email address
+const MY_EMAIL = "gjunior123sanchez@gmail.com";
+
+// CV configuration:
+//
+// OPTION 1:
+// If you have a PDF CV, place its URL or file path below.
+// Example: const CV_URL = "my-cv.pdf";
+//
+// OPTION 2:
+// Leave empty until you have a CV.
+//
+// NOTE: For a strictly one-file website, you can also
+// embed your CV as a Base64 data URL.
+
+const CV_URL = "";
+
+
+/* =====================================================
+   DOWNLOAD CV BUTTON
+===================================================== */
+
+function downloadCV() {
+
+    if (!CV_URL.trim()) {
+
+        alert(
+            "Your CV has not been configured yet.\n\n" +
+            "To enable this button, edit the CV_URL variable " +
+            "inside the JavaScript section and add your CV PDF."
+        );
+
+        return;
+    }
+
+    const link = document.createElement("a");
+
+    link.href = CV_URL;
+    link.download = "Gerardo_V_Sanchez_Jr_CV.pdf";
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+}
+
+
+/* =====================================================
+   MOBILE NAVIGATION
+===================================================== */
+
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", function() {
+
+    const isOpen = navLinks.classList.toggle("open");
+
+    menuToggle.setAttribute("aria-expanded", isOpen);
+
+    menuToggle.innerHTML = isOpen ? "✕" : "☰";
+
+});
+
+// Close mobile navigation when a link is selected.
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+
+    link.addEventListener("click", function() {
+
+        navLinks.classList.remove("open");
+
+        menuToggle.setAttribute("aria-expanded", "false");
+
+        menuToggle.innerHTML = "☰";
+
+    });
+
+});
+
+
+/* =====================================================
+   SMOOTH SCROLLING
+===================================================== */
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+    anchor.addEventListener("click", function(event) {
+
+        const targetId = this.getAttribute("href");
+
+        if (!targetId || targetId === "#") return;
+
+        const target = document.querySelector(targetId);
+
+        if (target) {
+
+            event.preventDefault();
+
+            target.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        }
+
+    });
+
+});
+
+
+/* =====================================================
+   SCROLL ENTRANCE ANIMATIONS
+===================================================== */
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.classList.add("visible");
+
+            observer.unobserve(entry.target);
+
+        }
+
+    });
+
+}, {
+    threshold: 0.12
+});
+
+document.querySelectorAll(".reveal").forEach(element => {
+
+    observer.observe(element);
+
+});
+
+
+/* =====================================================
+   ACTIVE NAVIGATION LINK
+===================================================== */
+
+const sections = document.querySelectorAll("section[id]");
+
+const navigationLinks = document.querySelectorAll(
+    ".nav-links a[href^='#']"
+);
+
+function updateActiveNavigation() {
+
+    let currentSection = "home";
+
+    sections.forEach(section => {
+
+        const sectionTop = section.offsetTop - 150;
+
+        if (window.scrollY >= sectionTop) {
+
+            currentSection = section.getAttribute("id");
+
+        }
+
+    });
+
+    navigationLinks.forEach(link => {
+
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") === "#" + currentSection) {
+
+            link.classList.add("active");
+
+        }
+
+    });
+
+}
+
+window.addEventListener("scroll", updateActiveNavigation);
+
+
+/* =====================================================
+   BACK TO TOP BUTTON
+===================================================== */
+
+const backTop = document.getElementById("backTop");
+
+window.addEventListener("scroll", function() {
+
+    if (window.scrollY > 400) {
+
+        backTop.classList.add("show");
+
+    } else {
+
+        backTop.classList.remove("show");
+
+    }
+
+});
+
+backTop.addEventListener("click", function() {
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+});
+
+
+/* =====================================================
+   CONTACT FORM
+   Opens the user's default email application.
+   No server or backend required.
+===================================================== */
+
+const contactForm = document.getElementById("contactForm");
+
+contactForm.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const name = document.getElementById("visitorName").value.trim();
+
+    const email = document.getElementById("visitorEmail").value.trim();
+
+    const subject = document.getElementById("visitorSubject").value.trim();
+
+    const message = document.getElementById("visitorMessage").value.trim();
+
+    if (!name || !email || !subject || !message) {
+
+        alert("Please complete all required fields.");
+
+        return;
+
+    }
+
+    const emailSubject = encodeURIComponent(subject);
+
+    const emailBody = encodeURIComponent(
+        "Hello Gerardo,\n\n" +
+        message +
+        "\n\nFrom: " + name +
+        "\nEmail: " + email
+    );
+
+    const mailtoLink =
+        "mailto:" + MY_EMAIL +
+        "?subject=" + emailSubject +
+        "&body=" + emailBody;
+
+    window.location.href = mailtoLink;
+
+});
+
+
+/* =====================================================
+   PROJECT LINKS
+   Replace # in each project link with its actual URL.
+===================================================== */
+
+function projectLink(event, element) {
+
+    const projectURL = element.getAttribute("href");
+
+    if (!projectURL || projectURL === "#") {
+
+        event.preventDefault();
+
+        alert(
+            "Project link not configured yet.\n\n" +
+            "Edit this project's View Project link " +
+            "and add your actual project URL."
+        );
+
+        return false;
+
+    }
+
+    return true;
+
+}
+
+
+/* =====================================================
+   AUTOMATIC COPYRIGHT YEAR
+===================================================== */
+
+document.getElementById("currentYear").textContent =
+    new Date().getFullYear();
+
+
+/* =====================================================
+   INITIALIZE
+===================================================== */
+
+updateActiveNavigation();
+
+</script>
+
+</body>
+</html>
+```
